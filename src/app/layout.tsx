@@ -20,10 +20,11 @@ export const metadata: Metadata = {
   },
   description:
     "Thoughts at the edge of technology, philosophy, intelligence, and the future.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL("https://blogs.siddhantkrishna.com"),
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
+    url: "https://blogs.siddhantkrishna.com",
     siteName: "SiddhantKrishna's Void",
     title: "SiddhantKrishna's Void",
     description:
