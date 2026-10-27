@@ -24,10 +24,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.metaTitle || post.title,
     description: post.metaDescription || post.excerpt || undefined,
+    alternates: { canonical: `/essays/${encodeURIComponent(slug)}` },
     openGraph: {
       title: post.metaTitle || post.title,
       description: post.metaDescription || post.excerpt || undefined,
       type: "article",
+      url: `/essays/${encodeURIComponent(slug)}`,
+      modifiedTime: post.updatedAt?.toISOString(),
       publishedTime: post.publishedAt?.toISOString(),
       images: post.ogImage ? [post.ogImage] : undefined,
     },

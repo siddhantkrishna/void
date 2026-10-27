@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .limit(1);
 
   if (!post) return { title: "Not Found" };
-  return { title: post.title, description: post.excerpt || undefined };
+  return { title: post.title, description: post.excerpt || undefined, alternates: { canonical: `/research/${encodeURIComponent(slug)}` } };
 }
 
 export default async function ResearchArticlePage({ params }: Props) {

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .limit(1);
 
   if (!project) return { title: "Not Found" };
-  return { title: project.title, description: project.description || undefined };
+  return { title: project.title, description: project.description || undefined, alternates: { canonical: `/projects/${encodeURIComponent(slug)}` } };
 }
 
 export default async function ProjectPage({ params }: Props) {
